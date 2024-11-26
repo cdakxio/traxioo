@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-950 text-gray-100;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-dark-900/40 backdrop-blur-lg border border-dark-800/50 rounded-2xl;
+  }
+  
+  .gradient-border {
+    @apply relative before:absolute before:-inset-[1px] before:rounded-[inherit] before:bg-gradient-to-r before:from-purple-500 before:to-indigo-500 before:-z-10;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400;
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at top center, rgba(124, 58, 237, 0.1) 0%, rgba(0, 0, 0, 0) 50%),
+              radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.1) 0%, rgba(0, 0, 0, 0) 50%);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
